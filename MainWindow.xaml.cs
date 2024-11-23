@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryApp_Exam_10.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,18 @@ namespace LibraryApp_Exam_10
         public MainWindow()
         {
             InitializeComponent();
+            MainFrame.Navigate(new PageLibrary());
+            Manager.MainFrame = MainFrame;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MainFrame_ContentRendered(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -5,8 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibraryApp_Exam_10"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="HomeWindow" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Grid Background="AliceBlue"/>
+        <TextBlock Text="{Binding ElementName=MainFrame,
+                                  Path=Content.Title}" 
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" 
+                   FontSize="30"/>
         
+        <Grid Background="AliceBlue" 
+              Grid.Row="2"/>
+
+        <Button Content="Back" 
+                Click="Button_Click"
+                HorizontalAlignment="Right"
+                Height="30" Width="175" Margin="10"/>
+        <Frame Name="MainFrame" 
+               Grid.Row="1" 
+               NavigationUIVisibility="Hidden"
+               ContentRendered="MainFrame_ContentRendered" />
     </Grid>
 </Window>
